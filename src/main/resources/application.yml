@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/Quiz
+    username: ${DB_USER:postgres}
+    password: ${DB_PASS:postgres}
+server:
+  servlet:
+    context-path: /quizApplication

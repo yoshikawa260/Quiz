@@ -1,0 +1,248 @@
+/* Reset styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    color: #343a40;
+    text-align: center;
+}
+
+
+/* Table styles with borders */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border: 1px solid #dee2e6;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: #fff;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    text-align: center;
+}
+
+.table thead th {
+    vertical-align: middle;
+    border-bottom: 2px solid #dee2e6;
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: bold;
+}
+
+.table tbody+tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+.table-primary,
+.table-primary>th,
+.table-primary>td {
+    background-color: #b8daff;
+}
+
+.table-hover .table-primary:hover {
+    background-color: #9fcdff;
+}
+
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+
+/* Button styles */
+.btn {
+    white-space: nowrap;
+    width: auto;
+    text-align: center;
+}
+
+.button-container .btn-primary,
+.button-container .btn-secondary,
+.button-container .btn-danger {
+    width: 200px;
+    margin-right: 20px;
+    transition: box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-container .btn-primary:hover,
+.button-container .btn-secondary:hover,
+.button-container .btn-danger:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+
+.btn-primary {
+    background-color: #2a78cc;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.custom-alert {
+    text-align: center;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62;
+}
+
+.btn-danger {
+    background-color: #d84150;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Pagination styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-link {
+    border: 1px solid #dee2e6;
+    background-color: #f0f4f8;
+    color: black;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-link:hover {
+    background-color: #495057;
+    color: white;
+}
+
+.page-item .active {
+    border: 1px solid #dee2e6;
+    background-color: #495057;
+    color: white;
+}
+
+
+/* Overlay and popup styles */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.confirmPopUp {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+    text-align: center;
+
+}
+
+.confirmPopUp p {
+    margin-bottom: 20px;
+    /* マージンを大きめに変更 */
+    font-size: 20px;
+    /* 文字サイズを変更 */
+}
+
+.confirmPopUp .button-container {
+    text-align: center;
+}
+
+.confirmPopUp .btn {
+    padding: 12px 24px;
+    /* ボタンのパディングを調整 */
+    font-size: 14px;
+    /* ボタンの文字サイズを変更 */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    /* 文字サイズを大きく */
+    width: 40px;
+    /* 幅を設定 */
+    height: 40px;
+    /* 高さを設定 */
+    line-height: 40px;
+    /* 行の高さをボタンの高さに合わせる */
+    text-align: center;
+    /* テキストを中央揃え */
+    border: none;
+    /* ボーダーをなしにする */
+    border-radius: 50%;
+    /* 円形の形状にする */
+    background-color: #ccc;
+    /* 背景色を灰色に設定 */
+    color: #000;
+    /* 文字色を黒に設定 */
+}
+
+.close-btn:hover {
+    background-color: #aaa;
+    /* ホバー時の背景色を濃い灰色に設定 */
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/finalResult.css}">
+</head>
+
+<body>
+    <div th:insert="~{header}"></div>
+    <div class="container">
+        <p>お疲れさまでした</p>
+        <div class="finish">
+            <p th:text="${'出題数：' + session.questionCount+ '問'}"></p>
+            <p th:text="${'正解：' + session.rightCount+ '問'}"></p>
+            <p th:text="${'正答率：'+session.correctAnswerRate+'％'}"></p>
+        </div>
+        <br><br>
+        <form th:action="@{/question}" method="post">
+            <input type="hidden" name="id" th:value="${session.titlesId}">
+            <button class="btn">もう1度</button>
+        </form>
+        <form th:action="@{/main}">
+            <button class="btn">mainに戻る</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

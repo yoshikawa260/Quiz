@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link th:href="@{/css/showQuestionDetails.css}" rel="stylesheet">
+</head>
+
+<body>
+    <div th:insert="~{header}"></div>
+    <h3>クイズ詳細</h3>
+
+    <div class="container">
+        <div class="alert alert-success  custom-alert" th:if="${successMessage}" th:utext="${successMessage}">
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>質問</th>
+                    <th>選択肢1<br>(正答)</th>
+                    <th>選択肢2<br>（誤答）</th>
+                    <th>選択肢3<br>（誤答）</th>
+                    <th>選択肢4<br>（誤答）</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <div class="alert alert-danger custom-alert" th:if="${errorMessage}" role="alert"
+                    th:text="${errorMessage}">
+                </div>
+                <tr th:each="choices: ${session.choicesList}">
+                    <td th:text="${choices.question}"></td>
+                    <td th:text="${choices.choice1}"></td>
+                    <td th:text="${choices.choice2}"></td>
+                    <td th:text="${choices.choice3}"></td>
+                    <td th:text="${choices.choice4}"></td>
+                    <td>
+                        <form class="table-link" th:action="@{/edit/editDetails}" method="post">
+                            <input type="hidden" name="id" th:value="${choices.id}">
+                            <button class="btn btn-primary">編集</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form th:action="@{/edit/deleteChoices}" method="post">
+                            <input type="hidden" name="id" th:value="${choices.id}">
+                            <input type="hidden" name="titlesId" th:value="${choices.titlesId}">
+                            <button class="btn btn-danger">削除</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <ul class="pagination">
+                <li class="page-item" th:classappend="${session.currentPage == 1} ? ' disabled'">
+                    <a class="page-link" th:href="@{/edit/showPage(currentPage=${session.currentPage-1})}">
+                        &laquo;
+                    </a>
+                </li>
+                <li class="page-item" th:each="page : ${session.pageNumbersList}">
+                    <a class="page-link" th:classappend="${page == session.currentPage} ? ' active'"
+                        th:href="@{/edit/showPage(currentPage=${page})}" th:text="${page}"></a>
+                </li>
+                <li class="page-item" th:classappend="${session.currentPage == session.totalPage} ? ' disabled'">
+                    <a class="page-link" th:href="@{/edit/showPage(currentPage=${session.currentPage+1})}">
+                        &raquo;
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+    <div class="button-container">
+        <form th:action="@{/edit/addChoices}" method="post">
+            <button class="btn btn-primary">クイズを追加する</button>
+        </form>
+        <form th:action="@{/main}" method="post">
+            <button class="btn btn-secondary">クイズ一覧に戻る</button>
+        </form>
+        <button type="button" class="btn btn-danger" onclick="showPopup()">クイズ全てを削除する</button>
+    </div>
+
+
+    <div class="overlay"></div>
+    <div class="confirmPopUp">
+        <button type="button" class="close-btn">×</button>
+        <p>クイズが全て削除されます</p>
+        <p>よろしいですか？</p>
+        <div class="button-container">
+            <button class="btn btn-secondary cancel-btn">いいえ</button>
+            <form th:action="@{/edit/deleteQuestion}" class="allDelete" method="post">
+                <button class="btn btn-danger agree-btn">はい</button>
+            </form>
+        </div>
+    </div>
+
+    <script th:src="@{/js/showQuestionDetails.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

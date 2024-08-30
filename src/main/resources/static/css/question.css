@@ -1,0 +1,66 @@
+/* body要素のスタイル */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+}
+
+/* 見出しのスタイル */
+h1, h3 {
+    color: #343a40;
+}
+
+/* クイズ番号のスタイル */
+.count-label {
+    font-size: 1.5rem;
+    font-weight:bold;
+    margin-top: 1rem;
+}
+
+/* クイズ問題のスタイル */
+.question-label {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* 選択肢ボタンのスタイル */
+.option {
+    margin: 1rem auto;
+    padding: 1rem; 
+    font-size: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #6c757d;
+    color: #343a40;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 400px;
+    max-width:400px;
+    height: auto;
+}
+
+/* 選択肢ボタンのホバースタイル */
+.option:hover {
+    background-color: #495057;
+    border-color: #495057;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 影を強化 */
+}
+
+/* mainに戻るボタンのスタイル */
+#returnBtn {
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #6c757d;
+    color: #6c757d; /* 文字色を枠の色と同じに */
+    box-shadow: none; /* 影を削除 */
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+/* mainに戻るボタンのホバースタイル */
+#returnBtn:hover {
+    background-color: #495057;
+    border-color: #495057;
+    color: #ffffff; /* ホバー時に文字色を変更 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* ホバー時に影を強化 */
+}

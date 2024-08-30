@@ -1,0 +1,51 @@
+/* body要素のスタイル */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+}
+
+/* コンテナのスタイル */
+.container {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+/* お疲れさまでしたメッセージのスタイル */
+.container p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 1rem;
+}
+
+/* 結果表示のスタイル */
+.finish p {
+    font-size: 1.25rem;
+    color: #343a40;
+    margin: 0.5rem 0;
+}
+
+/* ボタンのスタイル */
+.btn {
+    margin: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #adb5bd;
+    color: #343a40;
+    max-width: 200px;
+    min-width:200px;
+    box-shadow: none;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+/* ボタンのホバースタイル */
+.btn:hover {
+    background-color: #373b3f;
+    border-color: #adb5bd;
+    color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}

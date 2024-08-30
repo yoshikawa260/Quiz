@@ -1,0 +1,184 @@
+/* body要素のスタイル */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+}
+
+/* 見出しのスタイル */
+h3 {
+    color: #343a40;
+    text-align: center;
+    margin-top: 20px;
+}
+/* フォームのスタイル */
+.createChoicesForm {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* 要素の内部内容がはみ出さないようにする */
+}
+
+.returnBtnForm {
+    max-width: 550px;
+    margin: 20px auto;
+}
+
+/* テキストエリアと入力フィールドのスタイル */
+textarea,
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* ボタン関連のスタイル */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.btn-custom {
+    background-color: #6c757d;
+    border: 1px solid #6c757d;
+    color: #ffffff;
+    transition: box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom:hover {
+    background-color: #5b6570;
+    color: #ffffff;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-custom:focus {
+    outline: none;
+}
+
+.custom-btn-primary {
+    background-color: #2a78cc;
+    color: #ffffff;
+    transition: box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-btn-primary:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* エラーメッセージのスタイル */
+.alert.alert-danger.custom-alert {
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ボタンコンテナのスタイル */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* オーバーレイのスタイル */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* ポップアップのスタイル */
+.confirmPopUp {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 70px;
+    border-radius: 4px;
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ポップアップ内のボタンコンテナのスタイル */
+.confirmPopUp .button-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* テーブルのスタイル */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* テーブルヘッダのスタイル */
+thead {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+/* テーブルヘッダのセルのスタイル */
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+}
+
+/* テーブルボディのセルのスタイル */
+tbody td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+}
+
+/* テーブルボディの奇数行の背景色 */
+tbody tr:nth-child(odd) {
+    background-color: #f8f9fa;
+}
+
+/* テーブルボディの偶数行の背景色 */
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
